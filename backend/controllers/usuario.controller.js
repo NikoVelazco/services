@@ -77,3 +77,7 @@ usuarioCtrl.getUsuario = async (req, res) => {
 }
 
 module.exports = usuarioCtrl;
+
+/**
+ * ACA AGREGO ALGO
+ */
