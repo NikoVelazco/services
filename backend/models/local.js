@@ -2,7 +2,6 @@ const mongoose = require('mongoose');
 const {Schema} = mongoose;
 
 const LocalSchema = new Schema({
-    id: {type: Number, required: true},
     superficie: {type: Number, required: true},
     habilitado: {type: Boolean, required: true},
     costomes: {type: Number, required: true},
