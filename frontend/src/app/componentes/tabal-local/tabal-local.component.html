@@ -1,0 +1,48 @@
+
+<div class="row cuerpo justify-content-center align-items-center">
+    <h1 class="titulos">LOCALES</h1>
+    <!--<form id="formulario" class="p-4 justify-content-center align-items-center mb-2">
+        <div class="mb-3">
+          <input type="text" class="form-control" id="categoriaEspectador" name="categoriaEspectado" value="" aria-describedby="emailHelp" placeholder="ingrese una categoria">
+          <div id="categoriaEspectado" class="form-text" >Debe ingresar una categoria</div>
+        </div>
+        <div class="col-auto mt-2 centered">
+            <button type="button" class="btn btn-info" >Recuperar Por Filtro</button>
+            <button type="button" class="btn btn-info" >Recuperar Todos</button>
+        </div>
+    </form>-->
+    <div class="row p-2">
+        <h1 class="titulos">Registro de Locales</h1>
+        <div class="table-responsive border">
+            <table class="table tablaTicket">
+                <thead>
+                    <tr>
+                        <th scope="col">Superficie</th>
+                        <th scope="col">Habilitado</th>
+                        <th scope="col">Costomes</th>
+                        <th scope="col">Imagen</th>
+                        <th scope="col">Alquilado</th>
+                        <th scope="col">Accion</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let l of locales">
+                        <th scope="row">{{l.superficie}}</th>
+                        <td>{{l.habilitado ? 'Habilitado' : 'No Habilitado'}}</td>
+                        <td>{{l.costomes}}</td>
+                        <td>{{l.pathimagen}}</td>
+                        <td>{{l.alquilado ? 'Alquilado' : 'No alquilado'}}</td>
+                        <td><button type="submit" class="btn btn-secondary" (click)="modificarLocal(l._id)">Editar</button> <button type="submit" class="btn btn-danger btn-d" (click)="eliminarLocal(l._id)">Eliminar</button></td>
+                    </tr>
+            
+                </tbody>
+            </table>
+        </div>
+
+        <div class="agregar">
+            <a class="btn btn-primary mt-3">Agregar venta</a>
+        </div>
+        
+        
+    </div>
+</div>
