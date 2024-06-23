@@ -1,0 +1,144 @@
+
+
+
+<!--<div class="row cuerpo">
+    <div class="row justify-content-center align-items-center">
+      <div class="row">
+        <h1 class="titulos">Agregar Local</h1>-->
+        <!--<h1 class="titulos">{{ accion === 'edit' ? 'Editar Ticket' : 'Agregar Ticket' }}</h1>-->
+      <!--</div>
+      <div class="row justify-content-center align-items-center p-2">
+        <form  class="justify-content-center align-items-center formulario">
+          <form (ngSubmit)="accion === 'edit' ? editarTicket(ticket.id!) : agregarTicket()" class="justify-content-center align-items-center formulario" #formTicket="ngForm">-->
+          <!--<div>
+            <label for="superficie" class="col-form-label">Superficie</label>
+            <input type="number" id="superficie" name="superficie" class="form-control" aria-describedby="passwordHelpinline" placeholder="Ingresa la superficie" required min="1">
+            <div class="alert alert-danger m-2">
+              La superficie debe ser mayor o igual a 1
+            </div>
+          </div>
+          <div>
+            <label for="habilitado" class="col-form-label">Local Habilitado:</label>
+            <select  name="habilitado" id="habilitado" class="form-select" required>
+              <option value="">Confirme Local Habilitado</option>
+              <option value="true">Habilitado</option>
+              <option value="false">No Habilitado</option>
+            </select>
+            <div class="alert alert-danger m-2">
+              Debes seleccionar si el local es habilitado o no
+            </div>
+          </div>
+          <div>
+            <label for="costomes" class="col-form-label">Costomes</label>
+            <input type="number" id="costomes" name="costomes" class="form-control" aria-describedby="passwordHelpinline" placeholder="Ingresa el costomes" required min="1">
+            <div class="alert alert-danger m-2">
+              El costomes debe ser mayor o igual a 1
+            </div>
+          </div>
+          <div>
+            <label for="pathimagen" class="col-form-label">Cargar Imagen</label>
+            <input  type="text" id="pathimagen" name="pathimagen" class="form-control" aria-describedby="passwordHelpinline" placeholder="Ingrese url imagen" required >
+            <div class="alert alert-danger m-2">
+              La url es obligatoria
+            </div>
+          </div>
+          <div>
+            <label for="alquilado" class="col-form-label">Local Alquilado:</label>
+            <select  name="alquilado" id="alquilado" class="form-select" required>
+              <option value="">Confirme Local alquilado</option>
+              <option value="true">Alquilado</option>
+              <option value="false">No Alquilado</option>
+            </select>
+            <div class="alert alert-danger m-2">
+              Debes seleccionar si el local es Alquilado o no
+            </div>
+          </div>
+          <div class="col-auto mt-2 centered">
+            <button type="submit" class="btn btn-info mr-2" >Guardar Local</button>
+            <a class="btn btn-danger">Cancelar</a>-->
+            <!--<button *ngIf="edit == 0" type="submit" class="btn btn-primary" (click)="agregarTicket()">Guardar</button>-->
+            <button  type="submit" class="btn btn-primary" >Actualizar</button>
+            <!--<button type="submit" class="btn btn-info mr-2" [disabled]="formTicket.invalid">{{ accion === 'edit' ? 'Actualizar Ticket' : 'Generar Ticket' }}</button>
+            <a [routerLink]="['ticket', 2]" class="btn btn-danger">Cancelar</a>-->
+          <!--</div>
+        </form>
+      </div>
+    </div>
+  </div>-->
+
+  <div class="row cuerpo">
+    <div class="row justify-content-center align-items-center">
+      <div class="row">
+        <!--<h1 class="titulos">Agregar Local</h1>-->
+        <h1 class="titulos">{{ accion === 'new' ? 'Agregar Local' : 'Modificar Local' }}</h1>
+      </div>
+      <div class="row justify-content-center align-items-center p-2">
+        <form class="justify-content-center align-items-center formulario" #formLocal="ngForm">
+          <div>
+            <label for="superficie" class="col-form-label">Superficie</label>
+            <input [(ngModel)]="local.superficie" type="number" id="superficie" name="superficie" class="form-control" aria-describedby="passwordHelpinline" placeholder="Ingresa la superficie" required min="1" #super="ngModel">
+            <div class="alert alert-danger m-2" [hidden]="super.valid || super.pristine">
+              La superficie debe ser mayor o igual a 1
+            </div>
+          </div>
+          <div>
+            <label for="habilitado" class="col-form-label">Local Habilitado:</label>
+            <div class="form-check">
+              <input [(ngModel)]="local.habilitado" type="checkbox" id="habilitado" name="habilitado" class="form-check-input">
+              <label class="form-check-label" for="habilitado">Habilitado</label>
+            </div>
+          </div>
+          <div>
+            <label for="costomes" class="col-form-label">Costomes</label>
+            <input [(ngModel)]="local.costomes" type="number" id="costomes" name="costomes" class="form-control" aria-describedby="passwordHelpinline" placeholder="Ingresa el costomes" required min="1" #disfraces="ngModel">
+            <div class="alert alert-danger m-2" [hidden]="disfraces.valid || disfraces.pristine">
+              El costomes debe ser mayor o igual a 1
+            </div>
+          </div>
+          <div>
+            <label for="pathimagen" class="col-form-label">Cargar Imagen</label>
+            <input [(ngModel)]="local.pathimagen" type="text" id="pathimagen" name="pathimagen" class="form-control" aria-describedby="passwordHelpinline" placeholder="Ingrese url imagen" required #url="ngModel">
+            <div class="alert alert-danger m-2" [hidden]="url.valid || url.pristine">
+              La url es obligatoria
+            </div>
+          </div>
+          <div>
+            <label for="alquilado" class="col-form-label">Local Alquilado:</label>
+            <div class="form-check">
+              <input [(ngModel)]="local.alquilado" type="checkbox" id="alquilado" name="alquilado" class="form-check-input">
+              <label class="form-check-label" for="alquilado">Alquilado</label>
+            </div>
+          </div>
+          <div class="col-auto mt-2 centered">
+            <!--<button type="submit" class="btn btn-info mr-2" [disabled]="formLocal.invalid" (click)="registrarLocal()">Guardar Local</button>-->
+            <a class="btn btn-danger">Cancelar</a>
+            <!--<button type="submit" class="btn btn-primary">Actualizar</button>-->
+            <button *ngIf="accion === 'new'" type="submit" class="btn btn-info mr-2" [disabled]="formLocal.invalid" (click)="registrarLocal()">Guardar Local</button>
+          <button *ngIf="accion === 'update'" type="button" class="btn btn-primary" [disabled]="formLocal.invalid" (click)="modificarLocal(local)">Actualizar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+  
+  <!-- Modal -->
+  <div class="modal fade" id="ticketGuardadoModal" tabindex="-1" aria-labelledby="ticketGuardadoModalLabel" aria-hidden="true" >
+    <div class="modal-dialog">
+      <div class="modal-content modal-cuerpo">
+        <div class="modal-header">
+          <h5 class="modal-title" id="ticketGuardadoModalLabel">Ticket Guardado</h5>
+          <button type="button" class="btn-close" aria-label="Close" ></button>
+        </div>
+        <div class="modal-body">
+          Ticket guardado exitosamente.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" >Cerrar</button>
+          <button type="button" class="btn btn-info" >Aceptar</button>
+          <!--<a [routerLink]="['productos',0]" class="btn btn-info">Ir a Destacados</a>-->
+        </div>
+      </div>
+    </div>
+  </div>
+  
