@@ -1,0 +1,73 @@
+<div class="row cuerpo">
+    <div class="row justify-content-center align-items-center">
+      <div class="row">
+        <h1 class="titulos">{{ accion === 'new' ? 'Agregar Propietario' : 'Modificar Propietario' }}</h1>
+      </div>
+      <div class="row justify-content-center align-items-center p-2">
+        <form class="justify-content-center align-items-center formulario" #formPropietario="ngForm">
+          <div>
+            <label for="apellido" class="col-form-label">Apellido</label>
+            <input [(ngModel)]="propietario.apellido" type="text" id="apellido" name="apellido" class="form-control" aria-describedby="passwordHelpinline" placeholder="Ingresa el apellido" required #lastname="ngModel">
+            <div class="alert alert-danger m-2" [hidden]="lastname.valid || lastname.pristine">
+              El apellido del propietario es obligatorio
+            </div>
+          </div>
+          <div>
+            <label for="nombre" class="col-form-label">Nombre</label>
+            <input [(ngModel)]="propietario.nombre" type="text" id="nombre" name="nombre" class="form-control" aria-describedby="passwordHelpinline" placeholder="Ingresa el nombre" required #name="ngModel">
+            <div class="alert alert-danger m-2" [hidden]="name.valid || name.pristine">
+              El nombre del propietario es obligatorio
+            </div>
+          </div>
+          <div>
+            <label for="dni" class="col-form-label">DNI</label>
+            <input [(ngModel)]="propietario.dni" type="text" id="dni" name="dni" class="form-control" aria-describedby="passwordHelpinline" placeholder="Ingresa el DNI" required #doc="ngModel">
+            <div class="alert alert-danger m-2" [hidden]="doc.valid || doc.pristine">
+              El DNI del propietario es obligatorio
+            </div>
+          </div>
+          <div>
+            <label for="email" class="col-form-label">Email</label>
+            <input [(ngModel)]="propietario.email" type="text" id="email" name="email" class="form-control" aria-describedby="passwordHelpinline" placeholder="Ingresa el email" required email #mail="ngModel">
+            <div class="alert alert-danger m-2" [hidden]="mail.valid || mail.pristine">
+              Ingrese un email válido
+            </div>
+          </div>
+          <div>
+            <label for="telefono" class="col-form-label">Telefono</label>
+            <input [(ngModel)]="propietario.telefono" type="text" id="telefono" name="telefono" class="form-control" aria-describedby="passwordHelpinline" placeholder="Ingresa el telefono" required #phone="ngModel">
+            <div class="alert alert-danger m-2" [hidden]="phone.valid || phone.pristine">
+              El teléfono es obligatorio
+            </div>
+          </div>
+          <div class="col-auto mt-2 centered">
+            <a class="btn btn-danger">Cancelar</a>
+            <button *ngIf="accion === 'new'" type="submit" class="btn btn-info mr-2" [disabled]="formPropietario.invalid" (click)="crearPropietario()">Guardar Propietario</button>
+          <button *ngIf="accion === 'update'" type="button" class="btn btn-primary" [disabled]="formPropietario.invalid" (click)="modificarPropietario(propietario)">Modificar Propietario</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+  
+  <!-- Modal -->
+  <div class="modal fade" id="ticketGuardadoModal" tabindex="-1" aria-labelledby="ticketGuardadoModalLabel" aria-hidden="true" >
+    <div class="modal-dialog">
+      <div class="modal-content modal-cuerpo">
+        <div class="modal-header">
+          <h5 class="modal-title" id="ticketGuardadoModalLabel">Ticket Guardado</h5>
+          <button type="button" class="btn-close" aria-label="Close" ></button>
+        </div>
+        <div class="modal-body">
+          Ticket guardado exitosamente.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" >Cerrar</button>
+          <button type="button" class="btn btn-info" >Aceptar</button>
+          <!--<a [routerLink]="['productos',0]" class="btn btn-info">Ir a Destacados</a>-->
+        </div>
+      </div>
+    </div>
+  </div>
+  
