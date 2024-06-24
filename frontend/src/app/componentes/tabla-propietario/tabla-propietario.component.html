@@ -1,0 +1,37 @@
+<div class="row cuerpo justify-content-center align-items-center">
+    <h1 class="titulos">PROPIETARIOS</h1>
+    <div class="row p-2">
+        <h1 class="titulos">Registro de Propietarios</h1>
+        <div class="table-responsive border">
+            <table class="table tablaTicket">
+                <thead>
+                    <tr>
+                        <th scope="col">Apellido</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">DNI</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Telefono</th>
+                        <th scope="col">Accion</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let p of propietarios">
+                        <th scope="row">{{p.apellido}}</th>
+                        <td>{{p.nombre}}</td>
+                        <td>{{p.dni}}</td>
+                        <td>{{p.email}}</td>
+                        <td>{{p.telefono}}</td>
+                        <td><button type="submit" class="btn btn-secondary" (click)="modificarPropietario(p._id)">Editar</button> <button type="submit" class="btn btn-danger btn-d" (click)="eliminarPropietario(p._id)">Eliminar</button></td>
+                    </tr>
+            
+                </tbody>
+            </table>
+        </div>
+
+        <div class="agregar">
+            <a class="btn btn-primary mt-3">Agregar venta</a>
+        </div>
+        
+        
+    </div>
+</div>
