@@ -3,6 +3,8 @@ import { FormLocalComponent } from './componentes/form-local/form-local.componen
 import { TabalLocalComponent } from './componentes/tabal-local/tabal-local.component';
 import { FormPropietarioComponent} from './componentes/form-propietario/form-propietario.component';
 import { TablaPropietarioComponent } from './componentes/tabla-propietario/tabla-propietario.component';
+import { FormAlquilerComponent} from './componentes/form-alquiler/form-alquiler.component';
+import { TablaAlquilerComponent } from './componentes/tabla-alquiler/tabla-alquiler.component';
 
 export const routes: Routes = [
     /*{
@@ -24,5 +26,13 @@ export const routes: Routes = [
     {
         path: 'propietario-tabla',
         component: TablaPropietarioComponent
+    },
+    {
+        path: 'alta-alquiler/:id',
+        component: FormAlquilerComponent
+    },
+    {
+        path: 'alquiler-tabla',
+        component: TablaAlquilerComponent
     }
 ];
