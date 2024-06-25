@@ -4,11 +4,11 @@ const express = require('express');
 
 const router = express.Router();
 
+router.post('/', alquilerCtrl.createAlquiler);
+
 router.get('/', alquilerCtrl.getAlquileres);
 
 router.get('/:id', alquilerCtrl.getAlquiler);
-
-router.post('/', alquilerCtrl.createAlquiler);
 
 router.put('/:id', alquilerCtrl.editAlquiler);
 
