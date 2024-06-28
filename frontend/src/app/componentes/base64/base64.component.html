@@ -1,0 +1,54 @@
+<div class="form-group">
+    <label for="fileInput" class="mr-2">Seleccionar Imagen:</label>
+    <input
+        type="file"
+        id="fileInput"
+        accept="image/*"
+        (change)="onFileSelected($event)"
+    />
+</div>
+<table class="table mt-3">
+    <thead>
+        <tr>
+            <th>Image</th>
+            <th>URL</th>
+            <th>Download</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let file of files">
+            <td>
+                <img [src]="file.base64" class="img-thumbnail" style="max-width: 300px" />
+            </td>
+            <td>
+                <textarea [value]="file.base64" class="form-control" rows="3" ></textarea>
+            </td>
+            <td>
+                <a [href]="file.safeurl" download="file.png" class="btn btn-primary" >Download</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<!--<div class="form-group"> 
+    <label for="fileInput" class="mr-2">Choose image(s):</label> 
+    <input 
+        type="file" 
+        id="fileInput" 
+        accept="image/*" 
+        multiple class="form-control-file" 
+        (change)="onFileSelected($event)" 
+        /> 
+    </div> 
+    <table class="table mt-3"> 
+        <thead> 
+            <tr> 
+                <th>Image</th> 
+                <th>URL</th> 
+                <th>Download</th> 
+            </tr> 
+        </thead> 
+        <tbody>
+            <tr *ngFor="let file of files"> <td> <img [src]="file.base64" class="img-thumbnail" style="max-width: 300px" /> </td> <td> <textarea [value]="file.base64" class="form-control" rows="3" ></textarea> </td> <td> <a [href]="file.safeurl" download="file.png" class="btn btn-primary" >Download</a > </td> </tr> </tbody> </table>
+
+                <h1>HOLAA</h1>
+                <img src="{{imagen}}">-->

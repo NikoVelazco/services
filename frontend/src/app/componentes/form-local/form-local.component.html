@@ -6,10 +6,17 @@
       <div class="row justify-content-center align-items-center p-2">
         <form class="justify-content-center align-items-center formulario" #formLocal="ngForm">
           <div>
+            <label for="nombreLocal" class="col-form-label">Nombre Local</label>
+            <input [(ngModel)]="local.nombreLocal" type="text" id="nombreLocal" name="nombreLocal" class="form-control" aria-describedby="passwordHelpinline" placeholder="Ingrese local" required #name="ngModel">
+            <div class="alert alert-danger m-2" [hidden]="name.valid || name.pristine">
+              El nombre del local es obligatorio
+            </div>
+          </div>
+          <div>
             <label for="superficie" class="col-form-label">Superficie</label>
-            <input [(ngModel)]="local.superficie" type="number" id="superficie" name="superficie" class="form-control" aria-describedby="passwordHelpinline" placeholder="Ingresa la superficie" required min="1" #super="ngModel">
+            <input [(ngModel)]="local.superficie" type="text" id="superficie" name="superficie" class="form-control" aria-describedby="passwordHelpinline" placeholder="Ingresa la superficie (AnchoxLargo)" required #super="ngModel">
             <div class="alert alert-danger m-2" [hidden]="super.valid || super.pristine">
-              La superficie debe ser mayor o igual a 1
+              La superficie es obligatoria
             </div>
           </div>
           <div>
@@ -20,10 +27,10 @@
             </div>
           </div>
           <div>
-            <label for="costomes" class="col-form-label">Costomes</label>
-            <input [(ngModel)]="local.costomes" type="number" id="costomes" name="costomes" class="form-control" aria-describedby="passwordHelpinline" placeholder="Ingresa el costomes" required min="1" #disfraces="ngModel">
+            <label for="costoMes" class="col-form-label">Costomes</label>
+            <input [(ngModel)]="local.costoMes" type="number" id="costoMes" name="costoMes" class="form-control" aria-describedby="passwordHelpinline" placeholder="Ingresa el costomes" required min="1" #disfraces="ngModel">
             <div class="alert alert-danger m-2" [hidden]="disfraces.valid || disfraces.pristine">
-              El costomes debe ser mayor o igual a 1
+              El costo mensual debe ser mayor o igual a 1
             </div>
           </div>
           <div>

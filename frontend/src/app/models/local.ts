@@ -1,15 +1,17 @@
 export class Local{
     _id!: string;
-    superficie: number;
+    nombreLocal: string;
+    superficie: string;
     habilitado: boolean;
-    costomes: number;
+    costoMes: number;
     pathimagen: string;
     alquilado: boolean;
 
     constructor(){
-        this.superficie = 0;
+        this.nombreLocal = "";
+        this.superficie = "";
         this.habilitado = false;
-        this.costomes = 0;
+        this.costoMes = 0;
         this.pathimagen = "";
         this.alquilado = false;
     }

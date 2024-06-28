@@ -17,9 +17,10 @@
             <table class="table tablaTicket">
                 <thead>
                     <tr>
-                        <th scope="col">Superficie</th>
+                        <th scope="col">Nombre Local</th>
+                        <th scope="col">Superficie (largo x ancho)</th>
                         <th scope="col">Habilitado</th>
-                        <th scope="col">Costomes</th>
+                        <th scope="col">Costo Mensual</th>
                         <th scope="col">Imagen</th>
                         <th scope="col">Alquilado</th>
                         <th scope="col">Accion</th>
@@ -27,9 +28,10 @@
                 </thead>
                 <tbody>
                     <tr *ngFor="let l of locales">
-                        <th scope="row">{{l.superficie}}</th>
+                        <th scope="row">{{l.nombreLocal}}</th>
+                        <td>{{l.superficie}}</td>
                         <td>{{l.habilitado ? 'Habilitado' : 'No Habilitado'}}</td>
-                        <td>{{l.costomes}}</td>
+                        <td>{{l.costoMes}}</td>
                         <td>{{l.pathimagen}}</td>
                         <td>{{l.alquilado ? 'Alquilado' : 'No alquilado'}}</td>
                         <td><button type="submit" class="btn btn-secondary" (click)="modificarLocal(l._id)">Editar</button> <button type="submit" class="btn btn-danger btn-d" (click)="eliminarLocal(l._id)">Eliminar</button></td>

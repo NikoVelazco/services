@@ -5,6 +5,7 @@ import { FormPropietarioComponent} from './componentes/form-propietario/form-pro
 import { TablaPropietarioComponent } from './componentes/tabla-propietario/tabla-propietario.component';
 import { FormAlquilerComponent} from './componentes/form-alquiler/form-alquiler.component';
 import { TablaAlquilerComponent } from './componentes/tabla-alquiler/tabla-alquiler.component';
+import { Base64Component } from './componentes/base64/base64.component';
 
 export const routes: Routes = [
     /*{
@@ -31,6 +32,10 @@ export const routes: Routes = [
         path: 'alta-alquiler/:id',
         component: FormAlquilerComponent
     },
+    {
+        path: 'base64',
+        component: Base64Component
+    }, 
     {
         path: 'alquiler-tabla',
         component: TablaAlquilerComponent
